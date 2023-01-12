@@ -1,16 +1,4 @@
-drinks_pub = {'Pints of lager, 3% (568ml)',
-'Pints of lager, 4.5% (568ml)',
-'Bottles of lager, 4.5% (330ml)',
-'Pints of stout, 4.2% (568ml)',
-'Pints of cider, 4.5% (568ml)',
-'Bottles of cider, 4.5% (330ml)',
-'Bottles of alcopop, 4% (330ml)',
-'Glasses of white wine, 12.5% (150ml)',
-'Bottles of white wine, 12.5% (750ml)',
-'Glasses of red wine, 12.5% (150ml)',
-'Bottles of red wine, 12.5% (750ml)',
-'Glasses of sparkling wine, 11.5% (125ml)',
-'Measures of spirits, 40% (35.5ml)'}
+#Standard drinks number in a drink in a pub-----------
 
 standard_drinks_pub = {'Pints of lager, 3% (568ml)': 1.3,
 'Pints of lager, 4.5% (568ml)': 2.05,
@@ -26,18 +14,7 @@ standard_drinks_pub = {'Pints of lager, 3% (568ml)': 1.3,
 'Glasses of sparkling wine, 11.5% (125ml)': 1,
 'Measures of spirits, 40% (35.5ml)': 1}
 
-drinks_home = {'Cans of lager, 4.5% (500ml)',
-'Bottles of lager, 4.5% (330ml)',
-'Cans of stout, 4.2% (500ml)',
-'Cans of cider, 4.5% (500ml)',
-'Bottles of cider, 4.5% (330ml)',
-'Bottles of alcopop, 4% (330ml)',
-'Glasses of white wine, 12.5% (150ml)',
-'Bottles of white wine, 12.5% (750ml)',
-'Glasses of red wine, 12.5% (150ml)',
-'Bottles of red wine, 12.5% (750ml)',
-'Glasses of sparkling wine, 11.5% (125ml)',
-'Measures of spirits, 40% (35.5ml)'}
+#Standard drinks number in a drink at home-------------
 
 standard_drinks_home = {'Cans of lager, 4.5% (500ml)': 1.8,
 'Bottles of lager, 4.5% (330ml)': 1,
@@ -52,9 +29,13 @@ standard_drinks_home = {'Cans of lager, 4.5% (500ml)': 1.8,
 'Glasses of sparkling wine, 11.5% (125ml)': 1,
 'Measures of spirits, 40% (35.5ml)': 1}
 
+#Welcome--------------------------------------------------
+
 print("Wellcome to Drink and Drive Calculator!!")
 
 print("\n")
+
+#Gender input---------------------------------------------
 
 gender = input("Are you male or female? m/f \n")
 while gender != 'm' or gender != 'f':
@@ -69,11 +50,15 @@ print("\n")
 drinks_number = 0
 process_time_pub = 0
 
+#Drink place input----------------------------------------
+
 place = input("Where were you Drinking: pub / home? \n")
 while place != 'pub' or place != 'home':
     print('Please use "pub" or "home" to reply \n')
     place = input("Where were you Drinking: pub / home? \n")
     
+    #Drink choice in a pub--------------------------------
+
     if place == 'pub':
         drinks_pub = int(input("""\n What drinks did you have? Enter a number: \n
         1. Pints of lager, 3% (568ml) 
@@ -93,6 +78,8 @@ while place != 'pub' or place != 'home':
         print(f'You entered: {drinks_pub}')
         print('\n')
     
+        #Number of drinks choice in a pub--------------------------------
+
         try:
             drinks_number = int(input("How many drinks did you have? \n"))
         except ValueError:
@@ -102,9 +89,14 @@ while place != 'pub' or place != 'home':
             print(f'You entered: {drinks_number}')
             print('\n')
 
-        process_time_pub = drinks_number * 3
+        #Process time formula, pub
+        print(drinks_number)
+        print(list(standard_drinks_pub.values())[drinks_pub - 1])
+        process_time_pub = drinks_number * list(standard_drinks_pub.values())[drinks_pub - 1]
         print(f'The alcohol should have left your system in: {process_time_pub} hours at _time_')
         break
+    
+    #Drink choice at home--------------------------------
 
     elif place == 'home':
         drinks_home = int(input("""\n What drinks did you have? Enter a number: \n
@@ -124,6 +116,8 @@ while place != 'pub' or place != 'home':
         print(f'You entered: {drinks_home}')
         print('\n')
         
+        #Number of drinks choice at home--------------------------------
+
         try:
             drinks_number = int(input("How many drinks did you have? \n"))
         except ValueError:
@@ -133,22 +127,12 @@ while place != 'pub' or place != 'home':
             print(f'You entered: {drinks_number}')
             print('\n')
 
-        process_time_home = drinks_number * 6
+        #Process time formula, home
+        
+        print(drinks_number)
+        print(list(standard_drinks_home.values())[drinks_home - 1])
+        process_time_home = drinks_number * list(standard_drinks_home.values())[drinks_home - 1]
         print(f'The alcohol should have left your system in: {process_time_home} hours at _time_')
         break
 
 print("\n")
-
-# drinks_number = 0
-# while True:
-#     try:
-#         drinks_number = int(input("How many drinks did you have? "))
-#     except ValueError:
-#         print("Please enter a number")
-#         continue
-#     else:
-#         print(f'You entered: {drinks_number}')
-#         break
-
-# process_time_pub = drinks_pub(st_drinks_pub) * drinks_number 
-# print(f'The alcohol should have left your system in: {process_time_pub} hours at {time}')
