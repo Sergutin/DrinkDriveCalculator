@@ -1,3 +1,6 @@
+from datetime import datetime, timedelta
+x = datetime.now().strftime("%H:%M %Y-%m-%d")
+
 #Standard drinks number in a drink in a pub-----------
 
 standard_drinks_pub = {'Pints of lager, 3% (568ml)': 1.3,
@@ -90,10 +93,12 @@ while place != 'pub' or place != 'home':
             print('\n')
 
         #Process time formula, pub
-        print(drinks_number)
-        print(list(standard_drinks_pub.values())[drinks_pub - 1])
+
+        # print(drinks_number)
+        # print(list(standard_drinks_pub.values())[drinks_pub - 1])
         process_time_pub = drinks_number * list(standard_drinks_pub.values())[drinks_pub - 1]
-        print(f'The alcohol should have left your system in: {process_time_pub} hours at _time_')
+        time_pub = datetime.now() + timedelta(hours=process_time_pub)
+        print(f'The alcohol should have left your system in: {process_time_pub} hours at {time_pub}')
         break
     
     #Drink choice at home--------------------------------
@@ -129,10 +134,11 @@ while place != 'pub' or place != 'home':
 
         #Process time formula, home
         
-        print(drinks_number)
-        print(list(standard_drinks_home.values())[drinks_home - 1])
+        # print(drinks_number)
+        # print(list(standard_drinks_home.values())[drinks_home - 1])
         process_time_home = drinks_number * list(standard_drinks_home.values())[drinks_home - 1]
-        print(f'The alcohol should have left your system in: {process_time_home} hours at _time_')
+        time_home = datetime.now() + timedelta(hours=process_time_home)
+        print(f'The alcohol should have left your system in: {process_time_home} hours at {time_home}')
         break
 
 print("\n")
