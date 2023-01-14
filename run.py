@@ -33,9 +33,11 @@ standard_drinks_home = {'Cans of lager, 4.5% (500ml)': 1.8,
 
 # Welcome--------------------------------------------------
 
-print("Welcome to Drink and Drive Calculator!")
-
-print("\n")
+print("""Welcome to Drink and Drive Calculator!\n
+This tool calculates an estimated time of processing alcohol for information purposes only.
+On average, it takes one hour to process one standard drink.
+Any amount of alcohol will affect your ability to drive.\n
+Let's start!\n""")
 
 # Gender input---------------------------------------------
 
@@ -60,7 +62,7 @@ while place != 'pub' and place != 'home':
     print('Please use "pub" or "home" to reply \n')
     place = input("Where were you Drinking: pub / home? \n")
 
-    # Drink choice in a pub--------------------------------
+# Drink choice in a pub--------------------------------
 
 if place == 'pub':
     while True:
@@ -105,6 +107,7 @@ if place == 'pub':
     process_time_pub = drinks_number * list(standard_drinks_pub.values())[drinks_pub - 1]
     time_pub = datetime.now() + timedelta(hours=process_time_pub)
     print(f'The alcohol should have left your system in: {process_time_pub} hours at {time_pub}')
+    print("\nRemember! Drink responsibly and never ever drink and drive!")
 
 # Drink choice at home--------------------------------
 
@@ -146,8 +149,9 @@ if place == 'home':
         print(f'You entered: {drinks_number}')
         print('\n')
 
-        # Process time formula, home
+# Process time formula, home
 
     process_time_home = drinks_number * list(standard_drinks_home.values())[drinks_home - 1]
     time_home = datetime.now() + timedelta(hours=process_time_home)
-    print(f'The alcohol should have left your system in: {process_time_home} hours at {time_home}')
+    print(f'The alcohol should have left your system in: {process_time_home} hours at {time_home}.')
+    print("\nRemember! Drink responsibly and never ever drink and drive!")

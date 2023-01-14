@@ -3,18 +3,18 @@ from datetime import datetime, timedelta
 # Standard drinks number in a drink in a pub-----------
 
 standard_drinks_pub = {'Pints of lager, 3% (568ml)': 1.3,
-                        'Pints of lager, 4.5% (568ml)': 2.05,
-                        'Bottles of lager, 4.5% (330ml)': 1,
-                        'Pints of stout, 4.2% (568ml)': 2.05,
-                        'Pints of cider, 4.5% (568ml)': 2.05,
-                        'Bottles of cider, 4.5% (330ml)': 1,
-                        'Bottles of alcopop, 4% (330ml)': 1.2,
-                        'Glasses of white wine, 12.5% (150ml)': 1.5,
-                        'Bottles of white wine, 12.5% (750ml)': 7.5,
-                        'Glasses of red wine, 12.5% (150ml)': 1.5,
-                        'Bottles of red wine, 12.5% (750ml)': 7.5,
-                        'Glasses of sparkling wine, 11.5% (125ml)': 1,
-                        'Measures of spirits, 40% (35.5ml)': 1}
+                       'Pints of lager, 4.5% (568ml)': 2.05,
+                       'Bottles of lager, 4.5% (330ml)': 1,
+                       'Pints of stout, 4.2% (568ml)': 2.05,
+                       'Pints of cider, 4.5% (568ml)': 2.05,
+                       'Bottles of cider, 4.5% (330ml)': 1,
+                       'Bottles of alcopop, 4% (330ml)': 1.2,
+                       'Glasses of white wine, 12.5% (150ml)': 1.5,
+                       'Bottles of white wine, 12.5% (750ml)': 7.5,
+                       'Glasses of red wine, 12.5% (150ml)': 1.5,
+                       'Bottles of red wine, 12.5% (750ml)': 7.5,
+                       'Glasses of sparkling wine, 11.5% (125ml)': 1,
+                       'Measures of spirits, 40% (35.5ml)': 1}
 
 # Standard drinks number in a drink at home-------------
 
@@ -89,33 +89,30 @@ if place == 'pub':
                 break
             else:
                 print(f'You entered {drinks_pub}. Please enter a number from 1 to 13.')
-        
 
-        # Number of drinks choice in a pub--------------------------------
-    try:
-        drinks_number = int(input("How many drinks did you have? \n"))
-    except ValueError:
-        print("Please enter a number \n")
-        drinks_number = int(input("How many drinks did you have? \n")) 
-    else:
-        print(f'You entered: {drinks_number}')
-        print('\n')
-        
-        
+# Number of drinks choice in a pub--------------------------------
+    while True:
+        try:
+            drinks_number = int(input("How many drinks did you have? \n"))
+        except ValueError:
+            print("Please enter a number \n")
+            drinks_number = input("How many drinks did you have? \n")
+        else:
+            print(f'You entered: {drinks_number}')
+            print('\n')
 
-        # Process time formula, pub
+# Process time formula, pub
 
     process_time_pub = drinks_number * list(standard_drinks_pub.values())[drinks_pub - 1]
     time_pub = datetime.now() + timedelta(hours=process_time_pub)
     print(f'The alcohol should have left your system in: {process_time_pub} hours at {time_pub}')
-        
 
-    # Drink choice at home--------------------------------
+# Drink choice at home--------------------------------
 
 if place == 'home':
     while True:
         try:
-            drinks_home = int(input("""\n What drinks did you have? Enter a number: \n
+            drinks_home = int(input("""\nWhat drinks did you have? Enter a number: \n
                 1. Cans of lager, 4.5% (500ml)
                 2. Bottles of lager, 4.5% (330ml)
                 3. Cans of stout, 4.2% (500ml)
@@ -138,16 +135,14 @@ if place == 'home':
                 break
             else:
                 print(f'You entered {drinks_home}. Please enter a number from 1 to 12.')
-            
 
-        # Number of drinks choice at home--------------------------------
+# Number of drinks choice at home--------------------------------
 
     try:
         drinks_number = int(input("How many drinks did you have? \n"))
     except ValueError:
         print("Please enter a number \n")
         drinks_number = int(input("How many drinks did you have? \n"))
-            
     else:
         print(f'You entered: {drinks_number}')
         print('\n')
