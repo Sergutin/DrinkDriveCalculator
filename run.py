@@ -53,6 +53,7 @@ drinks_number = 0
 process_time_pub = 0
 drinks_pub = 0
 drinks_home = 0
+drink = 0
 
 # Drink place input----------------------------------------
 

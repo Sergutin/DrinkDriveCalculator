@@ -1,4 +1,15 @@
 from datetime import datetime, timedelta
+from os import system
+
+def clear():
+ 
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+ 
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
 # Standard drinks number in a drink in a pub-----------
 
@@ -33,9 +44,12 @@ standard_drinks_home = {'Cans of lager, 4.5% (500ml)': 1.8,
 
 # Welcome--------------------------------------------------
 
-print("Welcome to Drink and Drive Calculator!")
-
-print("\n")
+print("""Welcome to Drink and Drive Calculator!\n
+This tool calculates an estimated time of processing alcohol for information 
+purposes only.
+On average, it takes one hour to process one standard drink.
+Any amount of alcohol will affect your ability to drive.\n
+Let's start!\n""")
 
 # Gender input---------------------------------------------
 
@@ -49,8 +63,9 @@ print("\n")
 
 drinks_number = 0
 process_time_pub = 0
-drinks_pub = 0
-drinks_home = 0
+process_time_home = 0
+process_time = 0
+drink = 0
 
 # Drink place input----------------------------------------
 
@@ -60,12 +75,12 @@ while place != 'pub' and place != 'home':
     print('Please use "pub" or "home" to reply \n')
     place = input("Where were you Drinking: pub / home? \n")
 
-    # Drink choice in a pub--------------------------------
+# Drink choice in a pub--------------------------------
 
 if place == 'pub':
     while True:
         try:
-            drinks_pub = int(input("""\nWhat drinks did you have? Enter a number: \n
+            drink = int(input("""\nWhat drinks did you have? Enter a number: \n
                 1. Pints of lager, 3% (568ml)
                 2. Pints of lager, 4.5% (568ml)
                 3. Bottles of lager, 4.5% (330ml)
@@ -83,36 +98,46 @@ if place == 'pub':
         except ValueError:
             print('Please enter a number from 1 to 13.')
         else:
-            if 1 <= drinks_pub <= 13:
-                print(f'You entered: {drinks_pub}')
+            if 1 <= drink <= 13:
+                print(f'You entered: {drink}')
                 print('\n')
                 break
             else:
-                print(f'You entered {drinks_pub}. Please enter a number from 1 to 13.')
+                print(f'You entered {drink}. Please enter a number from 1 to 13.')
 
 # Number of drinks choice in a pub--------------------------------
-    while True:
-        try:
-            drinks_number = int(input("How many drinks did you have? \n"))
-        except ValueError:
-            print("Please enter a number \n")
-            drinks_number = input("How many drinks did you have? \n")
-        else:
-            print(f'You entered: {drinks_number}')
-            print('\n')
+    try:
+        drinks_number = int(input("How many drinks did you have? \n"))
+    except ValueError:
+        print("Please enter a number \n")
+        drinks_number = int(input("How many drinks did you have? \n"))
+    else:
+        print(f'You entered: {drinks_number}')
+        print('\n')
 
 # Process time formula, pub
 
-    process_time_pub = drinks_number * list(standard_drinks_pub.values())[drinks_pub - 1]
+    process_time_pub = drinks_number * list(standard_drinks_pub.values())[drink - 1]
     time_pub = datetime.now() + timedelta(hours=process_time_pub)
     print(f'The alcohol should have left your system in: {process_time_pub} hours at {time_pub}')
+    print("\nRemember! Drink responsibly and never ever drink and drive!")
+
+
+# Process time formula
+def process_time(number_of_drinks, standard_drinks):
+    process_time = drink * list(standard_drinks.values())[drinks - 1]
+    time = datetime.now() + timedelta(hours=process_time)
+    print(f'The alcohol should have left your system in: {process_time} hours at {time}')
+    print("\nRemember! Drink responsibly and never ever drink and drive!")
+
+
 
 # Drink choice at home--------------------------------
 
 if place == 'home':
     while True:
         try:
-            drinks_home = int(input("""\nWhat drinks did you have? Enter a number: \n
+            drink = int(input("""\nWhat drinks did you have? Enter a number: \n
                 1. Cans of lager, 4.5% (500ml)
                 2. Bottles of lager, 4.5% (330ml)
                 3. Cans of stout, 4.2% (500ml)
@@ -129,12 +154,12 @@ if place == 'home':
         except ValueError:
             print('Please enter a number from 1 to 12.')
         else:
-            if 1 <= drinks_home <= 12:
-                print(f'You entered: {drinks_home}')
+            if 1 <= drink <= 12:
+                print(f'You entered: {drink}')
                 print('\n')
                 break
             else:
-                print(f'You entered {drinks_home}. Please enter a number from 1 to 12.')
+                print(f'You entered {drink}. Please enter a number from 1 to 12.')
 
 # Number of drinks choice at home--------------------------------
 
@@ -147,8 +172,12 @@ if place == 'home':
         print(f'You entered: {drinks_number}')
         print('\n')
 
-        # Process time formula, home
+# Process time formula, home
 
-    process_time_home = drinks_number * list(standard_drinks_home.values())[drinks_home - 1]
+    process_time_home = drinks_number * list(standard_drinks_home.values())[drink - 1]
     time_home = datetime.now() + timedelta(hours=process_time_home)
-    print(f'The alcohol should have left your system in: {process_time_home} hours at {time_home}')
+    x = time_home.strftime("%H:%M %Y-%m-%d")
+
+
+    print(f'The alcohol should have left your system in: {process_time_home} hours at {x}.')
+    print("\nRemember! Drink responsibly and never ever drink and drive!")
