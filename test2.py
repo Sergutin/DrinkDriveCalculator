@@ -3,11 +3,11 @@ from os import system
 
 def clear():
 
-    # for windows
+# for windows
     if name == 'nt':
         _ = system('cls')
 
-    # for mac and linux(here, os.name is 'posix')
+# for mac and linux(here, os.name is 'posix')
     else:
         _ = system('clear')
 
@@ -74,6 +74,26 @@ def start_app():
     drink = 0
     place = input("Where were you Drinking: pub / home? \n")
 
+# Process time formula
+
+    def process_time():
+        if place == 'pub':
+            process_time_pub = drinks_number * list(standard_drinks_pub.values())[drink - 1]
+            p_time = str(round(process_time_pub, 1))
+            time_pub = datetime.now() + timedelta(hours=process_time_pub)
+            y = time_pub.strftime("%H:%M %Y-%m-%d")
+            print(f'The alcohol should have left your system in: {p_time} hours at {y}')
+            print("\nRemember! Drink responsibly and never ever drink and drive!")
+            menu()
+        elif place == 'home':
+            process_time_home = drinks_number * list(standard_drinks_home.values())[drink - 1]
+            p_time = str(round(process_time_home, 1))
+            time_home = datetime.now() + timedelta(hours=process_time_home)
+            x = time_home.strftime("%H:%M %Y-%m-%d")
+            print(f'The alcohol should have left your system in: {p_time} hours at {x}.')
+            print("\nRemember! Drink responsibly and never ever drink and drive!")
+            menu()
+
     while place != 'pub' and place != 'home':
         print('Please use "pub" or "home" to reply \n')
         place = input("Where were you Drinking: pub / home? \n")
@@ -118,26 +138,7 @@ def start_app():
         else:
             print(f'You entered: {drinks_number}')
             print('\n')
-
-# Process time formula, pub
-
-        process_time_pub = drinks_number * list(standard_drinks_pub.values())[drink - 1]
-        p_time = str(round(process_time_pub, 1))
-        time_pub = datetime.now() + timedelta(hours=process_time_pub)
-        y = time_pub.strftime("%H:%M %Y-%m-%d")
-        print(f'The alcohol should have left your system in: {p_time} hours at {y}')
-        print("\nRemember! Drink responsibly and never ever drink and drive!")
-        menu()
-
-
-    # Process time formula
-    # def process_time(number_of_drinks, standard_drinks):
-    #     process_time = drink * list(standard_drinks.values())[drinks - 1]
-    #     time_pub = datetime.now() + timedelta(hours=process_time)
-    #     y = time_pub.strftime("%H:%M %Y-%m-%d")
-    #     print(f'The alcohol should have left your system in: {process_time} hours at {y}')
-    #     print("\nRemember! Drink responsibly and never ever drink and drive!")
-
+        process_time()
 
 # Drink choice at home--------------------------------
 
@@ -178,14 +179,5 @@ def start_app():
         else:
             print(f'You entered: {drinks_number}')
             print('\n')
-
-# Process time formula, home
-
-        process_time_home = drinks_number * list(standard_drinks_home.values())[drink - 1]
-        p_time = str(round(process_time_home, 1))
-        time_home = datetime.now() + timedelta(hours=process_time_home)
-        x = time_home.strftime("%H:%M %Y-%m-%d")
-        print(f'The alcohol should have left your system in: {p_time} hours at {x}.')
-        print("\nRemember! Drink responsibly and never ever drink and drive!")
-        menu()
+        process_time()
 start_app()
