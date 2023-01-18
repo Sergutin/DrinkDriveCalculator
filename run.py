@@ -23,8 +23,8 @@ def menu():
     elif start == 'n':
         quit()
 
-# Standard drinks number in a drink in a pub-----------
 
+# Standard drinks number in a drink in a pub-----------
 
 st_drinks_pub = {'Pints of lager, 3% (568ml)': 1.3,
                  'Pints of lager, 4.5% (568ml)': 2.05,

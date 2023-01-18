@@ -4,8 +4,8 @@
 of processing alcohol for information purposes only. This application allows users to chooce the place the were drinking in (pub or home), the drink itself and the number of drinks. After that the application shows the time when the alcohol should have left the users system.</p>
 <p>Target audience: all age groups from 18, as "You must be 18 or over to buy alcohol in Ireland". Especially those who own and/or drive a car, as the app shows when the user will be able to drive after drinking.</p>
 
-<p>The application can be found [here](https://drinks-calculator.herokuapp.com)</p>
-<p>The repository can be found [here](https://github.com/Sergutin/DrinkDriveCalculator)</p>
+* The application can be found [here](https://drinks-calculator.herokuapp.com)
+* The repository can be found [here](https://github.com/Sergutin/DrinkDriveCalculator)
 
 <img src="assets/images/readme/main.jpg">
 
