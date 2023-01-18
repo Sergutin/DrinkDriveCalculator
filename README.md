@@ -17,16 +17,11 @@ of processing alcohol for information purposes only. This application allows use
   * [Home Drinks](#home-drinks)
 * [Testing](#testing)
   * [CI Python Linter](#CI-Python-Linter)
-  * [CSS](#css)
-  * [JSHint](#jshint)
-  * [Lighthouse](#lighthouse)
-  * [Manual Testing](#manual-testing)
   * [Fixed Bugs](#fixed-bugs)
   * [Unfixed Bugs](#unfixed-bugs)
 * [Deployment](#deployment)
   * [Cloning and forking](#cloning-and-forking)
 * [Media](#media)
-
 
 ## Languages Used
 <p>Python</p>
@@ -95,24 +90,12 @@ If the users enter anything different than that, they will see a message "Please
 
 <img src="assets/images/readme/start_again_home.jpg" width=600px height=auto>
 
-
-
-
-
-
-
-
 ## Testing
 
   ### CI Python Linter 
 <p>No errors were returned when passing through the PEP8 CI Python Linter:</p>
 
-<img src="assets/images/readme/html-test1.jpg" width=600px height=auto>
-<img src="assets/images/readme/html-test2.jpg" width=600px height=auto>
-
-
-
-
+<img src="assets/images/readme/pep8.jpg" width=700px height=auto>
 
   ### Fixed Bugs
 <p>During the project there were a few bugs and errors that have been fixed.</p>
@@ -171,14 +154,11 @@ To clone a repository in GitHub:</p>
 <li>Copy the URL for the repository.</li>
 <ul>
     <li>To clone the repository using HTTPS, click the "Copy" icon on the right of "HTTPS".</li>
-<img src="assets/images/readme/clone.jpg" width=500px height=auto>
+<img src="assets/images/readme/code.jpg" width=500px height=auto>
 <li>To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click the icon on the right to copy it.</li>
   <li>To clone a repository using GitHub CLI, click GitHub CLI, then click the "Copy" icon on the right.</li>
 </ul>
 </ol>
 
 ## Media
-<p>The main page image was taken from https://sightwords.com/images/memory/memory.jpg</p>
-<p>The back card image of the car was adapted from https://pictures.dealer.com/c/currychevroletscarsdale/1429/5f5b6bc6d929fb8039c58ab125c0f7a7x.jpg?impolicy=downsize&w=568</p>
-<p>Car logos were taken from https://similarpng.com/</p>
-<p>"You Win" image was taken from https://pbs.twimg.com/media/Fg48ZrfXgAAiPR0?format=jpg&name=large</p>
+<p>Standard drinks information was taken from https://www.drugs.ie/site/screen2StandardDrinks.html, https://www.drinkaware.ie/what-is-a-standard-drink/ and https://www.nhs.uk/live-well/alcohol-advice/calculating-alcohol-units/</p>
