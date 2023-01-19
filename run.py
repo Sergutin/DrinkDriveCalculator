@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from os import system
+from os import system, name
 
 
 def clear():
@@ -19,8 +19,10 @@ def menu():
         print('Please use "y" or "n" to reply\n')
         start = input('Do you want to start again? y / n\n')
     if start == 'y':
+        clear()
         start_app()
     elif start == 'n':
+        print("Thank you for using our app!")
         quit()
 
 
@@ -59,7 +61,7 @@ st_drinks_home = {'Cans of lager, 4.5% (500ml)': 1.8,
 # Welcome--------------------------------------------------
 
 def welcome():
-    welcome_message = print("""Welcome to Drink and Drive Calculator!\n
+    print("""Welcome to Drink and Drive Calculator!\n
 This tool calculates an estimated time
 of processing alcohol for information
 purposes only. On average, it takes one hour
@@ -68,39 +70,13 @@ Any amount of alcohol will affect your ability to drive.\n
 Let's start!\n""")
 
 
-welcome()
-
-
 # Drink place input----------------------------------------
 
 def start_app():
+    welcome()
     drinks_num = 0
-    p_time_pub = 0
-    p_time_home = 0
     drink = 0
     place = input("Where were you Drinking: pub / home? \n")
-
-# Process time formula
-
-    def process_time():
-        if place == 'pub':
-            p_time_pub = drinks_num * list(st_drinks_pub.values())[drink - 1]
-            p_time = str(round(p_time_pub, 1))
-            time_pub = datetime.now() + timedelta(hours=p_time_pub)
-            y = time_pub.strftime("%H:%M %Y-%m-%d")
-            print(f'Alcohol should have left your system in: {p_time}h at {y}')
-            print("\n")
-            print("Remember! Drink responsibly and never drink and drive!")
-            menu()
-        elif place == 'home':
-            p_time_home = drinks_num * list(st_drinks_home.values())[drink - 1]
-            p_time = str(round(p_time_home, 1))
-            time_home = datetime.now() + timedelta(hours=p_time_home)
-            x = time_home.strftime("%H:%M %Y-%m-%d")
-            print(f'Alcohol should have left your system in: {p_time}h at {x}')
-            print("\n")
-            print("Remember! Drink responsibly and never drink and drive!")
-            menu()
 
     while place != 'pub' and place != 'home':
         print('Please use "pub" or "home" to reply \n')
@@ -148,7 +124,7 @@ What drinks did you have? Enter a number: \n
         else:
             print(f'You entered: {drinks_num}')
             print('\n')
-        process_time()
+        process_time(drinks_num, st_drinks_pub, drink)
 
 # Drink choice at home--------------------------------
 
@@ -191,7 +167,21 @@ What drinks did you have? Enter a number:\n
         else:
             print(f'You entered: {drinks_num}')
             print('\n')
-        process_time()
+        process_time(drinks_num, st_drinks_home, drink)
+
+
+# Process time formula
+
+def process_time(drinks_num, st_drinks_location, drink):
+
+    time = drinks_num * list(st_drinks_location.values())[drink - 1]
+    time_r = str(round(time, 1))
+    time_drive = datetime.now() + timedelta(hours=time)
+    date = time_drive.strftime("%H:%M %Y-%m-%d")
+    print(f'The alcohol should have left your system in: {time_r}h at {date}')
+    print("\n")
+    print("Remember! Drink responsibly and never drink and drive!")
+    menu()
 
 
 start_app()

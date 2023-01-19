@@ -161,4 +161,4 @@ To clone a repository in GitHub:</p>
 </ol>
 
 ## Media
-<p>Standard drinks information was taken from https://www.drugs.ie/site/screen2StandardDrinks.html, https://www.drinkaware.ie/what-is-a-standard-drink/ and https://www.nhs.uk/live-well/alcohol-advice/calculating-alcohol-units/</p>
+<p>Standard drinks information was taken from [here](https://www.drugs.ie/site/screen2StandardDrinks.html), [here](https://www.drinkaware.ie/what-is-a-standard-drink/) and [here](https://www.nhs.uk/live-well/alcohol-advice/calculating-alcohol-units/)</p>
