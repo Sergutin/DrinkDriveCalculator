@@ -116,14 +116,14 @@ What drinks did you have? Enter a number: \n
 
 # Number of drinks choice in a pub--------------------------------
 
-        try:
-            drinks_num = int(input("How many drinks did you have? \n"))
-        except ValueError:
-            print("Please enter a number \n")
-            drinks_num = int(input("How many drinks did you have? \n"))
-        else:
-            print(f'You entered: {drinks_num}')
-            print('\n')
+        while True:
+            try:
+                drinks_num = int(input("How many drinks did you have? \n"))
+                print(f'You entered: {drinks_num}')
+                break
+            except ValueError:
+                print("Please enter a number \n")
+                continue
         process_time(drinks_num, st_drinks_pub, drink)
 
 # Drink choice at home--------------------------------
@@ -159,15 +159,15 @@ What drinks did you have? Enter a number:\n
 
 # Number of drinks choice at home--------------------------------
 
-        try:
-            drinks_num = int(input("How many drinks did you have? \n"))
-        except ValueError:
-            print("Please enter a number \n")
-            drinks_num = int(input("How many drinks did you have? \n"))
-        else:
-            print(f'You entered: {drinks_num}')
-            print('\n')
-        process_time(drinks_num, st_drinks_home, drink)
+        while True:
+            try:
+                drinks_num = int(input("How many drinks did you have? \n"))
+                print(f'You entered: {drinks_num}')
+                break
+            except ValueError:
+                print("Please enter a number \n")
+                continue
+        process_time(drinks_num, st_drinks_pub, drink)
 
 
 # Process time formula

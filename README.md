@@ -1,8 +1,8 @@
 <h1>Drink and Drive Calculator</h1>
 
 <p>This project introduces an interactive application that calculates an estimated time
-of processing alcohol for information purposes only. This application allows users to chooce the place the were drinking in (pub or home), the drink itself and the number of drinks. After that the application shows the time when the alcohol should have left the users system.</p>
-<p>Target audience: all age groups from 18, as "You must be 18 or over to buy alcohol in Ireland". Especially those who own and/or drive a car, as the app shows when the user will be able to drive after drinking.</p>
+of processing alcohol for information purposes only. This application allows users to chooce the place they were drinking in (pub or home), the drink itself and the number of drinks. After that the application shows the time when the alcohol should have left the users system.</p>
+<p>Target audience: all age groups from 18 years old, as "You must be 18 or over to buy alcohol in Ireland". Especially those who own and/or drive a car, as the app shows when the user will be able to drive after drinking.</p>
 
 * The application can be found [here](https://drinks-calculator.herokuapp.com)
 * The repository can be found [here](https://github.com/Sergutin/DrinkDriveCalculator)
@@ -97,23 +97,17 @@ If the users enter anything different than that, they will see a message "Please
 
 <img src="assets/images/readme/pep8.jpg" width=700px height=auto>
 
-  ### Fixed Bugs
-<p>During the project there were a few bugs and errors that have been fixed.</p>
+  ### Fixed Bugs / Errors
+<p>During the PEP8 testing there were a few errors that have been fixed.</p>
 <ul>
-<li>Bug Number One: "You Win" window appeared every time after 2 matching pairs (for "easy" and for "normal" game as well, while for "normal" game it supposed to appear after 8 matching pairs rather than 2).</li>
-<p>Solution: JavaScript function matchCards was amended from:</p>
-<img src="assets/images/readme/bug1.jpg" width=300px height=auto>
-<p>to:</p>
-<img src="assets/images/readme/bug1fix.jpg" width=300px height=auto>
-<p>Additionally a global variable "level" was added with a default value of "null". It helped to solve the issue.</p>
-<li>Bug Number Two: Shuffle function didn't work properly for easy game, it was taking random cards from the whole array (8 cards) rather than from the first two cards.</li>
-<p>Solution: "shuffleCard" function was moved from "matchCard" function to the very beginning of the game, when users decide which game to play (easy / normal). Code with a bug:</p>
-<img src="assets/images/readme/bug2.jpg" width=300px height=auto>
-<p>Code after the fix:</p>
-<img src="assets/images/readme/bug2fix.jpg" width=300px height=auto>
-<li>Bug Number Three: Last four images in Normal game were not visible, just alt description was available.</li>
-<img src="assets/images/readme/bug3.jpg" width=500px height=auto>
-<p>Solution: forEach function (within shuffleCard function) was trying to run through all the cards, including the ones were hidden (when "Normal" game is being played, "Easy" game cards are being hidden). Another function "shuffleEasyCard" was implemented to separate cards for "normal" game and the ones for "easy" game. It solved the issue.</p>
+<li>1. W293 blank line contains whitespace</li>
+<p>Solution: Space has been removed</p>
+
+<li>2. E501 line too long (84 > 79 characters)</li>
+<p>Solution: Long lines were broken over multiple lines by wrapping expressions in parentheses</p>
+
+<li>3. W292 no newline at end of file</li>
+<p>Solution: New line was added at the end of the file</p>
 </ul>
 
   ### Unfixed Bugs
