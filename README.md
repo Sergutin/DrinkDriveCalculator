@@ -17,7 +17,7 @@ of processing alcohol for information purposes only. This application allows use
   * [Home Drinks](#home-drinks)
 * [Testing](#testing)
   * [CI Python Linter](#CI-Python-Linter)
-  * [Fixed Bugs](#fixed-bugs)
+  * [Fixed Bugs and Errors](#fixed-bugs-and-errors)
   * [Unfixed Bugs](#unfixed-bugs)
 * [Deployment](#deployment)
   * [Cloning and forking](#cloning-and-forking)
@@ -97,7 +97,7 @@ If the users enter anything different than that, they will see a message "Please
 
 <img src="assets/images/readme/pep8.jpg" width=700px height=auto>
 
-  ### Fixed Bugs / Errors
+  ### Fixed Bugs and Errors
 <p>During the PEP8 testing there were a few errors that have been fixed.</p>
 <ul>
 <li>1. W293 blank line contains whitespace</li>
@@ -155,4 +155,7 @@ To clone a repository in GitHub:</p>
 </ol>
 
 ## Media
-<p>Standard drinks information was taken from [here](https://www.drugs.ie/site/screen2StandardDrinks.html), [here](https://www.drinkaware.ie/what-is-a-standard-drink/) and [here](https://www.nhs.uk/live-well/alcohol-advice/calculating-alcohol-units/)</p>
+Standard drinks information was taken from 
+* [www.drugs.ie](https://www.drugs.ie/site/screen2StandardDrinks.html) 
+* [www.drinkaware.ie](https://www.drinkaware.ie/what-is-a-standard-drink/) 
+* [And www.nhs.uk](https://www.nhs.uk/live-well/alcohol-advice/calculating-alcohol-units/)
